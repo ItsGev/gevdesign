@@ -8,75 +8,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
-  <style>
-    .locked-hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 40px;
-      position: relative;
-      overflow: hidden;
-    }
-    .locked-hero-bg {
-      position: absolute;
-      inset: 0;
-    }
-    .locked-hero-bg img {
-      width: 100%; height: 100%;
-      object-fit: cover;
-      filter: brightness(0.25) blur(4px);
-      transform: scale(1.05);
-    }
-    .locked-hero-bg::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: rgba(13,13,13,0.6);
-    }
-    .locked-content {
-      position: relative;
-      z-index: 2;
-      max-width: 520px;
-    }
-    .locked-icon {
-      width: 48px;
-      height: 48px;
-      border: 1px solid var(--border-mid);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 32px;
-    }
-    .locked-content h1 {
-      font-family: var(--font-serif);
-      font-size: clamp(38px, 6vw, 64px);
-      font-weight: 300;
-      line-height: 1.05;
-      margin-bottom: 20px;
-    }
-    .locked-content h1 em { font-style: italic; color: var(--accent2); }
-    .locked-content p {
-      font-size: 15px;
-      color: var(--text-muted);
-      line-height: 1.75;
-      margin-bottom: 40px;
-    }
-    .locked-back {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 12px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--text-faint);
-      margin-top: 24px;
-      transition: color 0.3s;
-    }
-    .locked-back:hover { color: var(--text); }
-  </style>
 </head>
 <body>
 
@@ -84,9 +15,7 @@
     <a href="index.html" class="nav-logo">
       <img src="https://images.squarespace-cdn.com/content/v1/5e78019645630059aea17c07/1584992266800-M5TKYRN9V7KKILRTRA14/Gevorg_grigorian_logo2.png?format=300w" alt="Gev Design" />
     </a>
-    <button class="nav-toggle" aria-label="Toggle menu">
-      <span></span><span></span><span></span>
-    </button>
+    <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li class="nav-dropdown">
@@ -103,25 +32,179 @@
     </ul>
   </nav>
 
-  <div class="locked-hero">
-    <div class="locked-hero-bg">
-      <img src="https://images.squarespace-cdn.com/content/v1/5e78019645630059aea17c07/61eb858e-5f55-4978-96f6-70cf6f200eca/homepage_unified2.png" alt="" />
-    </div>
-    <div class="locked-content animate-up delay-1">
-      <div class="locked-icon">
-        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="3" y="8" width="12" height="9" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M6 8V5.5a3 3 0 016 0V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-      </div>
-      <p class="section-label">Case Study · UX/UI · Travel</p>
-      <h1>Unified<br/><em>Viking</em><br/>Experience</h1>
-      <p>This case study is password protected. To view the full project, please reach out directly.</p>
-      <a href="contact.html" class="btn">Request Access</a>
-      <br/>
-      <a href="index.html" class="locked-back">
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M9 2L4 7l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        Back to work
-      </a>
+  <div class="case-hero">
+    <img src="https://images.squarespace-cdn.com/content/v1/5e78019645630059aea17c07/27bb324c-f205-4e95-81c8-ff3643b4ece4/cover-iphone-tall-wide.jpg" alt="Unified Viking Experience" />
+    <div class="case-hero-overlay"></div>
+    <div class="case-hero-content">
+      <p class="section-label animate-up delay-1">Case Study · UX/UI · Travel</p>
+      <h1 class="animate-up delay-2">Unified Viking<br/>Experience</h1>
+      <p class="subtitle animate-up delay-3">Seamless travel, all in one place</p>
     </div>
   </div>
+
+  <div class="case-body">
+
+    <div class="case-section animate-reveal">
+      <h2>Project Overview</h2>
+      <p>This project aimed to transform Viking's digital ecosystem by rebuilding the My Viking Journey (MVJ) website and the Viking Voyager App into a unified, seamless digital experience. The goal was to enhance every stage of the guest journey — before, during, and after a cruise — by eliminating functional gaps, addressing usability issues, and meeting the growing expectations for mobile-enabled experiences.</p>
+    </div>
+
+    <div class="case-divider"><span class="case-divider-label">Contribution</span></div>
+
+    <div class="case-section animate-reveal">
+      <h2>My Contribution</h2>
+      <p>I was involved from the early stages, collaborating with Viking and an external design agency hired for the initial work. During onboarding I participated in key meetings, provided insights into existing user experiences, and facilitated a smooth handoff of our design system and style guide. Once the agency completed their deliverables, I took ownership of the project and drove it through to completion.</p>
+    </div>
+
+    <div class="case-divider"><span class="case-divider-label">Problem</span></div>
+
+    <div class="case-section animate-reveal">
+      <h2>Problem</h2>
+      <ul>
+        <li><strong>Disjointed User Experience</strong> — The existing app and website lacked cohesion, creating challenges during key phases like booking, in-transit, and post-trip.</li>
+        <li><strong>Low Adoption and Awareness</strong> — Guests depended on call centers and onboard staff due to subpar digital experiences.</li>
+        <li><strong>Functional Gaps</strong> — Limited features and inconsistent performance led to gaps in user engagement, especially during offline periods.</li>
+      </ul>
+      <div class="case-img">
+        <img src="https://images.squarespace-cdn.com/content/v1/5e78019645630059aea17c07/7c2abaf8-2dd0-4c1c-9a89-c5cbf5c93ab6/Problem-shadow2.png" alt="Problem analysis" />
+      </div>
+    </div>
+
+    <div class="case-divider"><span class="case-divider-label">Goal</span></div>
+
+    <div class="case-section animate-reveal">
+      <h2>Goal</h2>
+      <p>To develop a <strong>mobile-first digital companion platform</strong> that:</p>
+      <ul>
+        <li><strong>Empowers Guests</strong> — With tools for itinerary customization, travel updates, and self-service capabilities.</li>
+        <li><strong>Unifies the Ecosystem</strong> — A seamless experience across all phases of the guest journey, including offline functionality.</li>
+        <li><strong>Enhances User Adoption</strong> — Reduces dependency on external support and onboard teams.</li>
+        <li><strong>Leverages Data</strong> — Employs analytics to personalize experiences, improve functionality, and drive innovation.</li>
+      </ul>
+      <div class="case-img">
+        <img src="https://images.squarespace-cdn.com/content/v1/5e78019645630059aea17c07/416ea375-2551-47cc-a38d-679e4848bace/hand+mock.png" alt="Goal visualization" />
+      </div>
+    </div>
+
+    <div class="case-divider"><span class="case-divider-label">Solution</span></div>
+
+    <div class="case-section animate-reveal">
+      <h2>Solution</h2>
+      <ul>
+        <li><strong>Consolidated Platform</strong> — The new MVJ app merges the website and app into a single digital companion for a unified guest experience.</li>
+        <li><strong>Expanded Capabilities</strong> — Self-service features (payments, booking add-ons, real-time updates), offline access to cached content, and integration with travel services.</li>
+        <li><strong>Improved Adoption</strong> — Push notifications, personalized content, and seamless logins to ensure greater engagement.</li>
+        <li><strong>Analytics-Driven Development</strong> — Insights into user behavior inform ongoing improvements.</li>
+      </ul>
+      <div class="case-img">
+        <img src="https://images.squarespace-cdn.com/content/v1/5e78019645630059aea17c07/7e1edcbe-3a0b-48cf-b8a0-5cc34e4b58ee/Solution.png" alt="Solution overview" />
+      </div>
+    </div>
+
+    <div class="case-divider"><span class="case-divider-label">Process</span></div>
+
+    <div class="case-section animate-reveal">
+      <h2>Process</h2>
+
+      <div class="process-step">
+        <div class="step-number">1</div>
+        <div class="step-content">
+          <h4>Start with what we understand and the direction we aim to move in</h4>
+          <p>We pinpointed the core pain points and business objectives, aiming to address critical problem areas with targeted solutions. By establishing KPIs centered around these challenges and focusing on search categories and category touchpoints, we set a clear direction moving forward.</p>
+          <div class="case-img">
+            <img src="https://images.squarespace-cdn.com/content/v1/5e78019645630059aea17c07/c6b5d346-3f1b-4b55-b197-bbde263ccc84/Step+1.png" alt="Step 1 — Define direction" />
+          </div>
+        </div>
+      </div>
+
+      <div class="process-step">
+        <div class="step-number">2</div>
+        <div class="step-content">
+          <h4>Mapping the Journey</h4>
+          <p>A well-structured sitemap is the foundation of a seamless user experience. By mapping the site's hierarchy, we identified opportunities to streamline navigation, reduce friction, and guide users toward key actions effortlessly.</p>
+          <div class="case-img">
+            <img src="https://images.squarespace-cdn.com/content/v1/5e78019645630059aea17c07/43283204-81c6-4428-a76d-9e941ed21907/Screenshot+2025-02-06+at+1.51.09%E2%80%AFPM.png" alt="Sitemap" />
+          </div>
+        </div>
+      </div>
+
+      <div class="process-step">
+        <div class="step-number">3</div>
+        <div class="step-content">
+          <h4>Existing Designs</h4>
+          <p>The App and MVJ operated as two distinct products despite offering overlapping functionality. This created problems in two key areas:</p>
+          <p><strong>Visual Identity:</strong> The two products lacked cohesive branding, making it difficult for users to perceive them as part of the same brand.</p>
+          <p><strong>Accessibility:</strong> Users could log into MVJ via the Viking website, but the App required a separate download — creating friction and impairing the overall experience.</p>
+          <div class="case-img">
+            <img src="https://images.squarespace-cdn.com/content/v1/5e78019645630059aea17c07/b4e828b8-3050-4e91-aced-20e96738dd80/Existing+Designs.png" alt="Existing designs comparison" />
+          </div>
+        </div>
+      </div>
+
+      <div class="process-step">
+        <div class="step-number">4</div>
+        <div class="step-content">
+          <h4>High-Fidelity Mocks (Part 1)</h4>
+          <p>The design agency we collaborated with quickly produced high-fidelity designs. While aesthetically strong, they fell short of our user experience goals. Despite the limitations, their work provided an excellent foundational starting point.</p>
+          <div class="case-img">
+            <img src="https://images.squarespace-cdn.com/content/v1/5e78019645630059aea17c07/31ec0b3a-ee99-4949-98db-739e38c4dd96/Fueled+Designs+2.jpg" alt="Agency high-fidelity designs" />
+          </div>
+        </div>
+      </div>
+
+      <div class="process-step">
+        <div class="step-number">5</div>
+        <div class="step-content">
+          <h4>High-Fidelity Mocks (Part 2)</h4>
+          <p>With a clear foundation established, I deepened the focus on UX design. Key components were still outstanding — Gamification, Login/Create Account, a dynamic Message Center, a section for booking the next cruise, and more. These were the elements I conceptualized and designed from scratch.</p>
+          <div class="case-img">
+            <img src="https://images.squarespace-cdn.com/content/v1/5e78019645630059aea17c07/6a7ffab5-c5de-4efb-8e8b-4f82a3426461/High+Fidelity+before+and+after2.jpg" alt="High fidelity before and after" />
+          </div>
+          <a href="https://www.figma.com/proto/ciQH3JfPXQa3c4eJJeWp8x/Viking-%7C-External---MVJ-3.0?page-id=1036%3A1005&node-id=11193-15544&viewport=-33342%2C-2983%2C0.75&t=HKIOs1veIifwEwZD-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=11193%3A15544" target="_blank" class="prototype-link">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            View Figma Prototype
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="case-divider"><span class="case-divider-label">Results</span></div>
+
+    <div class="case-section animate-reveal">
+      <h2>Conclusion</h2>
+      <p>User testing and behavioral analytics provided key insights into pain points and opportunities. By applying these findings, we optimized the design to better align with user expectations and needs.</p>
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-number">92%</div>
+          <div class="stat-label">Engaged more with the redesigned app</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">86%</div>
+          <div class="stat-label">Said the new app was an improvement</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">100%</div>
+          <div class="stat-label">See the benefit of a single unified app</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <section class="cta-section">
+    <h2>Ready to take your design to the <strong>next level?</strong></h2>
+    <a href="contact.html" class="btn">Let's Connect</a>
+  </section>
+
+  <footer>
+    <div class="footer-links">
+      <a href="mailto:designergev@gmail.com">designergev@gmail.com</a>
+      <a href="tel:8184526527">818.452.6527</a>
+      <a href="https://www.linkedin.com/in/designergev/" target="_blank">LinkedIn</a>
+    </div>
+    <p class="footer-copy">© Gevorg Grigorian</p>
+  </footer>
 
   <script src="main.js"></script>
 </body>
