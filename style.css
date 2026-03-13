@@ -252,3 +252,87 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 3
   .step-number { font-size: 36px; width: auto; text-align: left; }
   footer { padding: 24px; flex-direction: column; text-align: center; }
 }
+
+/* ============================================
+   HOMEPAGE — WORK CARDS (image + bg layout)
+   ============================================ */
+.work-section { max-width: 900px; margin: 0 auto; padding: 96px 48px 120px; }
+.work-heading { font-family: var(--font-serif); font-size: clamp(36px, 4vw, 52px); font-weight: 300; color: var(--text); text-align: center; margin-bottom: 64px; }
+
+.work-card { display: block; color: inherit; margin-bottom: 80px; }
+.work-card:last-child { margin-bottom: 0; }
+
+.work-card-mockup { text-align: center; margin-bottom: -2px; }
+.work-card-mockup img { max-width: 80%; margin: 0 auto; display: block; position: relative; z-index: 2; }
+
+.work-card-bg {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  min-height: 220px;
+  display: flex;
+  align-items: flex-end;
+  transition: transform var(--ease);
+}
+.work-card:hover .work-card-bg { transform: translateY(-3px); }
+.work-card-bg-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.35) 60%, rgba(0,0,0,0.1) 100%);
+}
+.work-card-info {
+  position: relative; z-index: 2;
+  padding: 32px 36px;
+  width: 100%;
+}
+.work-card-info h3 {
+  font-family: var(--font-serif);
+  font-size: clamp(22px, 2.5vw, 30px);
+  font-weight: 400;
+  color: #fff;
+  margin-bottom: 6px;
+}
+.work-card-info p {
+  font-size: 15px;
+  color: rgba(255,255,255,0.75);
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+.work-card-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  transition: gap var(--ease);
+}
+.work-card:hover .work-card-cta { gap: 14px; }
+
+/* ============================================
+   CASE STUDY — LAYOUT VARIANTS
+   ============================================ */
+
+/* Horizontal rule divider (replaces case-divider) */
+.case-rule { border: none; border-top: 1px solid var(--border); margin: 64px 0; }
+
+/* 2-column: overview + contribution side by side */
+.case-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; margin-bottom: 0; }
+
+/* Text left, image right */
+.case-text-image { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
+.case-image-right .case-img { margin: 0; }
+
+/* Media label above image groups */
+.case-media-label { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin: 36px 0 12px; }
+
+/* Responsive overrides */
+@media (max-width: 960px) {
+  .work-section { padding: 64px 24px 80px; }
+  .work-card-mockup img { max-width: 90%; }
+  .case-2col { grid-template-columns: 1fr; gap: 32px; }
+  .case-text-image { grid-template-columns: 1fr; }
+}
