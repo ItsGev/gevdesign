@@ -1,260 +1,274 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Strategic Tactical Journey — Gev Design</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<nav class="nav">
-  <a href="index.html" class="nav-logo"><img src="https://images.squarespace-cdn.com/content/v1/5e78019645630059aea17c07/1584992266800-M5TKYRN9V7KKILRTRA14/Gevorg_grigorian_logo2.png?format=300w" alt="Gev Design" /></a>
-  <button class="nav-toggle"><span></span><span></span><span></span></button>
-  <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li class="nav-dropdown">
-      <span>Work <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
-      <ul class="dropdown-menu">
-        <li><a href="unified-viking.html">Unified Viking Experience</a></li>
-        <li><a href="strategic-tactical.html" class="active">Strategic Tactical Journey</a></li>
-        <li><a href="widget-gallery.html">Nativo Widget Gallery</a></li>
-        <li><a href="hilton-microsite.html">Hilton Microsite</a></li>
+
+  <!-- Navigation -->
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="https://images.squarespace-cdn.com/content/v1/5e78019645630059aea17c07/1584992266800-M5TKYRN9V7KKILRTRA14/Gevorg_grigorian_logo2.png?format=300w" alt="Gev Design">
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li class="dropdown-parent">
+          <button class="nav-dropdown-toggle">Work</button>
+          <ul class="nav-dropdown">
+            <li><a href="unified-viking.html">Unified Viking Experience</a></li>
+            <li><a href="strategic-tactical.html">Strategic Tactical Journey</a></li>
+            <li><a href="widget-gallery.html">Nativo Widget Gallery</a></li>
+            <li><a href="hilton-microsite.html">Hilton Microsite</a></li>
+          </ul>
+        </li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
-    </li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
-</nav>
-
-<div class="case-hero">
-  <img src="https://images.squarespace-cdn.com/content/v1/5e78019645630059aea17c07/836aa6ea-20c9-42da-b480-d9c51faab521/hero_main_LG2.jpg" alt="Strategic Tactical Journey" />
-  <div class="case-hero-overlay"></div>
-  <div class="case-hero-content">
-    <p class="section-label animate-up delay-1">Case Study · UX Strategy · Cruise</p>
-    <h1 class="animate-up delay-2">Strategic Tactical<br/>Journey</h1>
-    <p class="subtitle animate-up delay-3">Embracing newcomers and welcoming returning explorers</p>
-  </div>
-</div>
-
-<div class="case-body">
-
-  <!-- Overview + Contribution: side by side -->
-  <div class="case-2col animate-reveal">
-    <div class="case-section">
-      <h2>Project Overview</h2>
-      <p>This project aimed to educate users, new and old, about the value of a Viking cruise, while also showcasing current offerings. For many users, understanding the full cruise experience can be a challenge — especially those new to the brand or who have never cruised before, resulting in lower conversion rates. As mobile usage grows, the solution had to work seamlessly across all breakpoints.</p>
+      <button class="nav-hamburger" id="navHamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
-    <div class="case-section">
-      <h2>My Contribution</h2>
-      <p>As the main designer on this project, I had full responsibility for ensuring the final product met all requirements. My focus was creating a user-centered design that provided an intuitive and seamless experience — conducting user research, creating wireframes, producing final UI designs, and building prototypes.</p>
-    </div>
+  </nav>
+
+  <!-- Hero Image -->
+  <div class="case-hero">
+    <img src="https://images.squarespace-cdn.com/content/v1/5e78019645630059aea17c07/836aa6ea-20c9-42da-b480-d9c51faab521/hero_main_LG2.jpg" alt="Strategic Tactical Journey">
   </div>
 
-  <hr class="case-rule" />
+  <!-- Content -->
+  <div class="case-content">
+    <h1>Strategic Tactical Journey</h1>
+    <p class="case-subtitle">Embracing newcomers and welcoming returning explorers</p>
 
-  <!-- Problem: text left, image right -->
-  <div class="case-text-image animate-reveal">
-    <div class="case-section">
-      <h2>Problem</h2>
-      <p>The existing design appeared outdated and lacked user appeal, potentially eroding trust. Moreover, the absence of informative content hampered users' understanding of the Viking cruise experience.</p>
-      <p>To address these issues, I recommended incorporating genuine customer testimonials for authenticity and showcasing the comprehensive value of Viking's offerings. A visual update would make the page more inviting and user-friendly.</p>
-      <p>This holistic strategy aimed to establish trust, resonate with users, and drive conversions — blending content enhancement with visual refinement.</p>
+    <h2>Project Overview</h2>
+    <p>This project aimed to educate users, new and old, about the value of a Viking cruise, while also showcasing the current offerings. For many users, understanding the full cruise experience can be a challenge. This struggle can become even more pronounced for those who are new to a particular brand or have never cruised before, resulting in lower conversion rates. More and more of users are becoming mobile users, so this had to work on all breakpoints.</p>
+
+    <h2>My Contribution</h2>
+    <p>As the main designer on this project, I had the responsibility of ensuring that the final product was designed to meet all project requirements. I was focused on creating a user-centered design that provided an intuitive and seamless experience to our users. My contribution to the project included conducting user research, creating wireframes, creating final UI designs, and building prototypes.</p>
+
+    <hr>
+
+    <h3>Problem</h3>
+    <p>The current design appears outdated and lacks user appeal, potentially eroding trust. Moreover, the absence of informative content hampers the user's understanding of the Viking cruise experience.</p>
+    <p>To address these issues, I recommend incorporating genuine customer testimonials for authenticity and showcasing the comprehensive value of Viking's offerings. A visual update can make the page more inviting and user-friendly, aligning with our user-centered design approach.</p>
+    <p>This holistic strategy aims to establish trust, resonate with users, and drive conversions. By blending content enhancement with visual refinement, we can provide a more engaging user experience and ultimately boost conversion rates.</p>
+
+    <div class="case-image-block">
+      <img src="https://images.squarespace-cdn.com/content/v1/5e78019645630059aea17c07/3d62a292-bf13-4dc5-bf7f-773092192048/problem.png" alt="Problem analysis">
     </div>
-    <div class="case-image-right">
-      <div class="case-img">
-        <img src="https://images.squarespace-cdn.com/content/v1/5e78019645630059aea17c07/3d62a292-bf13-4dc5-bf7f-773092192048/problem.png" alt="Problem analysis" />
-      </div>
-    </div>
-  </div>
 
-  <hr class="case-rule" />
+    <hr>
 
-  <!-- Goal: full width -->
-  <div class="case-section animate-reveal">
-    <h2>Goal</h2>
+    <h3>Goal</h3>
     <ul>
       <li>Create added value of the offer and the Viking experience</li>
       <li>Optimize the urgency of the offer details</li>
       <li>Increase booking conversions (emphasis on new-to-brand)</li>
       <li>Reduce bounce rate</li>
     </ul>
-  </div>
 
-  <hr class="case-rule" />
+    <hr>
 
-  <!-- Solution: full width -->
-  <div class="case-section animate-reveal">
-    <h2>Solution</h2>
+    <h3>Solution</h3>
     <ul>
-      <li><strong>Testimonials from satisfied customers</strong> — humanize the experience and showcase the unique value Viking offers</li>
-      <li><strong>Inclusive Value</strong> — highlight that Viking includes no extra fees or hidden charges</li>
-      <li><strong>User-Friendly Design</strong> — visually appealing, easy to navigate, aligned with Viking's brand identity</li>
-      <li><strong>Educational Content</strong> — provide insights into the cruise experience and itineraries to help users make informed decisions</li>
+      <li><strong>Testimonials from satisfied customers:</strong> By putting testimonials from satisfied customers, users can understand the unique value that Viking offers. Testimonials also humanize the experience.</li>
+      <li><strong>Inclusive Value:</strong> Highlighting the Viking inclusive value, which includes no extra fees or hidden charges. It's an important aspect that potential users might expect from a brand that has been around for over 25 years.</li>
+      <li><strong>User-Friendly Design:</strong> Ensure that the design of the page is visually appealing, easy to navigate, and aligns with Viking's brand identity. Updating the images, fonts, and layout of the site can make a significant difference in attracting users.</li>
+      <li><strong>Educational Content:</strong> Provide clients with insights into the Viking cruise experience, itineraries, and other relevant information that can help them make informed decisions.</li>
     </ul>
-  </div>
 
-  <hr class="case-rule" />
+    <hr>
 
-  <!-- Process -->
-  <div class="case-section animate-reveal">
-    <h2>Process</h2>
-  </div>
+    <h3>Process</h3>
 
-  <!-- Step 1: Kickoff -->
-  <div class="process-step animate-reveal">
-    <div class="step-number">1</div>
-    <div class="step-content">
-      <h4>Kick Off with a Product Manager</h4>
-      <ul>
-        <li>Both myself and the product manager established the goal of the kick-off: align on project requirements, objectives, and expectations</li>
-        <li>The product manager provided an overview of the project including purpose, target audience, market positioning, and strategic goals</li>
-        <li>Shared relevant user research findings, personas, and customer insights</li>
-        <li>Discussed scope, deliverables, timeline, milestones, technical constraints, team size, and KPIs</li>
-      </ul>
-    </div>
-  </div>
+    <h4>1 — Kick Off with a Product Manager</h4>
+    <ul>
+      <li>Introduction and Purpose: Both myself and product manager briefly explain our roles in the project. We establish the goal of the kick off call, which is usually to align on the project requirements, objectives, and expectations.</li>
+      <li>Project Overview: The product manager provides an overview of the project, including its purpose, target audience, market positioning, and strategic goals. This aids me in understanding the context within which I will be working.</li>
+      <li>User Research and Insights: The product manager shares any relevant user research findings, user personas, or customer insights that have been gathered. This helps me to gain insights into the user needs, motivations, pain points, and goals.</li>
+      <li>Scope and Deliverables: The product manager and UX designer discuss the project's scope, including specific features, functionalities, and design deliverables that need to be prioritized. This ensures alignment on what needs to be achieved within the given project constraints.</li>
+      <li>Timeline and Milestones: The product manager discusses the project timeline and important milestones, such as key design iterations, user testing sessions, and development sprints. This helps establish a shared understanding of project phases and key deadlines.</li>
+      <li>We also discuss any technical constraints, how big the dev team is that will be working on the project, and what KPIs we are trying to hit.</li>
+    </ul>
 
-  <!-- Step 2: Research -->
-  <div class="process-step animate-reveal">
-    <div class="step-number">2</div>
-    <div class="step-content">
-      <h4>Research</h4>
-      <ul>
-        <li>Analyzed the target user groups, demographics, preferences, needs, and behavior patterns</li>
-        <li>Conducted competitive and comparative research on existing special offer experiences</li>
-        <li>Reviewed previous user interviews and analyzed the insights gathered</li>
-      </ul>
+    <hr>
 
-      <h3>Existing Design</h3>
-      <div class="device-row">
-        <div class="device-wrap">
-          <div class="device-browser">
-            <div class="browser-bar">
-              <span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-dot"></span>
-              <div class="browser-url">vikingrivercruises.com/promotions</div>
-            </div>
-            <div class="browser-screen">
-              <img src="https://images.squarespace-cdn.com/content/v1/5e78019645630059aea17c07/1048eea2-6c87-4a9d-97aa-86d3a7d5d4ff/www.vikingrivercruises.com_promotions+1.png" alt="Existing desktop" />
-            </div>
-          </div>
-          <p class="device-caption">Desktop</p>
-        </div>
-        <div class="device-wrap">
-          <div class="device-phone">
-            <div class="phone-notch"></div>
-            <div class="phone-screen"><img src="https://images.squarespace-cdn.com/content/v1/5e78019645630059aea17c07/05bdf61e-0980-49c7-8304-c72c1ad131d6/mobile1.png" alt="Mobile 1" /></div>
-            <div class="phone-home"></div>
-          </div>
-          <p class="device-caption">Mobile</p>
-        </div>
-        <div class="device-wrap">
-          <div class="device-phone">
-            <div class="phone-notch"></div>
-            <div class="phone-screen"><img src="https://images.squarespace-cdn.com/content/v1/5e78019645630059aea17c07/c773d84c-d20d-41de-bc08-8112a4ec34e8/mobile2.png" alt="Mobile 2" /></div>
-            <div class="phone-home"></div>
-          </div>
-          <p class="device-caption">Mobile</p>
+    <h4>2 — Research</h4>
+    <ul>
+      <li>Carefully analyze the information provided, ensuring a comprehensive understanding of the project requirements.</li>
+      <li>Identify and analyze the target user group(s) for the specific assignment.</li>
+      <li>Consider factors such as demographics, preferences, needs, and behavior patterns to inform design decisions.</li>
+      <li>Competitive and Comparative Research: Conduct an in-depth study of existing similar special offers experiences.</li>
+      <li>Analyze the market and identify key competitors to assess their strengths, weaknesses, and strategies.</li>
+      <li>Evaluate the success and shortcomings of comparable experiences, determining how our product can differentiate itself.</li>
+      <li>Review any previous user interviews conducted as part of the research process.</li>
+      <li>Analyze the insights gained from these interviews, considering user feedback, pain points, and desires.</li>
+      <li>Utilize this information to inform the design process and improve the overall user experience.</li>
+    </ul>
+
+    <p>Below you will find a sample of images of my research</p>
+
+    <h4>Existing Design</h4>
+
+    <!-- Desktop + Mobile side by side with equal heights -->
+    <div class="existing-designs-row">
+      <div class="design-col-desktop">
+        <p class="design-label">Desktop</p>
+        <div class="design-block">
+          <img src="https://images.squarespace-cdn.com/content/v1/5e78019645630059aea17c07/1048eea2-6c87-4a9d-97aa-86d3a7d5d4ff/www.vikingrivercruises.com_promotions+1.png" alt="Existing desktop design">
         </div>
       </div>
-
-      <h3>Inspiration</h3>
-      <div class="case-img-3col">
-        <div class="case-img"><img src="https://images.squarespace-cdn.com/content/v1/5e78019645630059aea17c07/9290c492-557c-4506-9553-39e27fbbda00/royalcarribean.png" alt="Royal Caribbean" /><div class="case-img-caption">Royal Caribbean</div></div>
-        <div class="case-img"><img src="https://images.squarespace-cdn.com/content/v1/5e78019645630059aea17c07/7f33ec43-a7ca-4209-9600-076cca90efbf/virgin.png" alt="Virgin Voyages" /><div class="case-img-caption">Virgin Voyages</div></div>
-        <div class="case-img"><img src="https://images.squarespace-cdn.com/content/v1/5e78019645630059aea17c07/286d8c91-6943-4ae5-b192-d65b348e902e/celebritycruises.png" alt="Celebrity Cruises" /><div class="case-img-caption">Celebrity Cruises</div></div>
+      <div class="design-col-mobile">
+        <p class="design-label">Mobile</p>
+        <div style="display:flex;gap:16px;flex:1;">
+          <div class="design-block" style="flex:1;">
+            <img src="https://images.squarespace-cdn.com/content/v1/5e78019645630059aea17c07/05bdf61e-0980-49c7-8304-c72c1ad131d6/mobile1.png" alt="Mobile screen 1">
+          </div>
+          <div class="design-block" style="flex:1;">
+            <img src="https://images.squarespace-cdn.com/content/v1/5e78019645630059aea17c07/c773d84c-d20d-41de-bc08-8112a4ec34e8/mobile2.png" alt="Mobile screen 2">
+          </div>
+        </div>
       </div>
     </div>
-  </div>
 
-  <!-- Step 3: Sitemap -->
-  <div class="process-step animate-reveal">
-    <div class="step-number">3</div>
-    <div class="step-content">
-      <h4>Sitemap</h4>
-      <p>I mapped the landing page's full functionality — where CTAs led, what content would live where. Although there were slight deviations in the final design, the sitemap served as an invaluable north star.</p>
-      <div class="case-img"><img src="https://images.squarespace-cdn.com/content/v1/5e78019645630059aea17c07/389600f3-fc52-41d8-858f-9e778cb1b781/sitemap.png" alt="Sitemap" /></div>
-    </div>
-  </div>
-
-  <!-- Step 4: Low-fi -->
-  <div class="process-step animate-reveal">
-    <div class="step-number">4</div>
-    <div class="step-content">
-      <h4>Low-Fidelity Mocks</h4>
-      <p>This is where everything starts to click. Low-fidelity mocks help the team and stakeholders visualize the product and align on direction. During this phase, we removed some sections, added new ones, and simplified others — for example, the <strong>Discover Our Ships</strong> section was condensed into a highlight rather than a full section.</p>
-      <div class="case-img"><img src="https://images.squarespace-cdn.com/content/v1/5e78019645630059aea17c07/99b9af92-6c36-41c2-9960-64f5ca4642c0/low+fidelity.png" alt="Low fidelity mocks" /></div>
-    </div>
-  </div>
-
-  <!-- Step 5: Hi-fi -->
-  <div class="process-step animate-reveal">
-    <div class="step-number">5</div>
-    <div class="step-content">
-      <h4>High-Fidelity Mocks</h4>
-      <p>With UX finalized, I applied our design system and branding to produce pixel-perfect high-fidelity mockups across desktop, tablet, and mobile.</p>
-      <a href="https://www.figma.com/proto/UpGwe9y38oahwPFeYKNM0L/Special-Offers?node-id=1-1922&page-id=0%3A1&scaling=min-zoom&type=design&viewport=-248%2C644%2C0.13" target="_blank" class="prototype-link">
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        View Figma Prototype
-      </a>
-
-      <!-- Desktop: 2 laptops side by side -->
-      <p class="case-media-label">Desktop</p>
-      <div class="case-img-row">
-        <div class="case-img"><img src="https://images.squarespace-cdn.com/content/v1/5e78019645630059aea17c07/d54542ad-44d4-4755-9f0c-f993a82e6c9a/high+fidelity+2.png" alt="Desktop hi-fi 1" /></div>
-        <div class="case-img"><img src="https://images.squarespace-cdn.com/content/v1/5e78019645630059aea17c07/e73cdd81-919b-4fb2-b19d-39cb1a29d114/high+fidelity+3.png" alt="Desktop hi-fi 2" /></div>
+    <h4>Inspiration</h4>
+    <div class="image-row--three">
+      <div class="image-col">
+        <div class="image-block">
+          <img src="https://images.squarespace-cdn.com/content/v1/5e78019645630059aea17c07/9290c492-557c-4506-9553-39e27fbbda00/royalcarribean.png" alt="Royal Caribbean">
+        </div>
+        <p class="image-caption">Royal Caribbean</p>
       </div>
-
-      <!-- Tablet + Mobile: 3 in a row -->
-      <p class="case-media-label">Tablet &amp; Mobile</p>
-      <div class="case-img-3col">
-        <div class="case-img"><img src="https://images.squarespace-cdn.com/content/v1/5e78019645630059aea17c07/bc53bc80-f60c-4e92-84d6-d8f3033a823c/high+fidelity+tablet.png" alt="Tablet hi-fi" /></div>
-        <div class="case-img"><img src="https://images.squarespace-cdn.com/content/v1/5e78019645630059aea17c07/c30424b9-83c0-4cf6-b5c1-5ba3d13ced10/high+fidelity+mobile+1.png" alt="Mobile hi-fi 1" /></div>
-        <div class="case-img"><img src="https://images.squarespace-cdn.com/content/v1/5e78019645630059aea17c07/3720a1ed-cd5b-4c51-9f60-1f5b0951351d/high+fidelity+mobile+2.png" alt="Mobile hi-fi 2" /></div>
+      <div class="image-col">
+        <div class="image-block">
+          <img src="https://images.squarespace-cdn.com/content/v1/5e78019645630059aea17c07/7f33ec43-a7ca-4209-9600-076cca90efbf/virgin.png" alt="Virgin Voyages">
+        </div>
+        <p class="image-caption">Virgin Voyages</p>
+      </div>
+      <div class="image-col">
+        <div class="image-block">
+          <img src="https://images.squarespace-cdn.com/content/v1/5e78019645630059aea17c07/286d8c91-6943-4ae5-b192-d65b348e902e/celebritycruises.png" alt="Celebrity Cruises">
+        </div>
+        <p class="image-caption">Celebrity Cruises</p>
       </div>
     </div>
-  </div>
 
-  <!-- Step 6: Testing -->
-  <div class="process-step animate-reveal">
-    <div class="step-number">6</div>
-    <div class="step-content">
-      <h4>Testing</h4>
-      <p>I set up a test on Usertesting.com to gather feedback before launch. Based on results, I iterated on the design — for example, replacing a carousel arrow on the Itinerary Cards with a more visible "Show More" CTA button that users had been missing.</p>
+    <hr>
+
+    <h4>3 — Sitemap</h4>
+    <p>I required a comprehensive understanding of the landing page's functionality, including the destination of the CTAs and the specific content that would be present on this page. Although there were slight deviations from the sitemap in the final design, it served as an incredible north star.</p>
+
+    <div class="case-image-block">
+      <img src="https://images.squarespace-cdn.com/content/v1/5e78019645630059aea17c07/389600f3-fc52-41d8-858f-9e778cb1b781/sitemap.png" alt="Sitemap">
     </div>
-  </div>
 
-  <hr class="case-rule" />
+    <hr>
 
-  <!-- Conclusion -->
-  <div class="case-section animate-reveal">
-    <h2>Conclusion</h2>
-    <p>With this new version, users get a full experience — educated on the Viking brand, the current deal is clear, and all available itineraries are surfaced at a glance.</p>
-    <div class="stats-grid">
-      <div class="stat-item"><div class="stat-number">85%</div><div class="stat-label">Preferred the content-rich layout</div></div>
-      <div class="stat-item"><div class="stat-number">85%</div><div class="stat-label">Said the Special Offer was clearer</div></div>
-      <div class="stat-item"><div class="stat-number">95%</div><div class="stat-label">Interested in learning more via CTAs</div></div>
-      <div class="stat-item"><div class="stat-number">95%</div><div class="stat-label">Preferred the new version overall</div></div>
+    <h4>4. Low-Fidelity Mocks</h4>
+    <p>This is the moment when everything starts to click, and we can really envision how the product will come together. It's honestly one of the best parts of the whole process because not only does it help me and the team understand the project better, but it also gives our stakeholders a clearer picture of what we're aiming for. Other than watching users interact with a prototype or a finished product, nothing is more helpful than finally getting to see a visual representation of the project.</p>
+
+    <div class="case-image-block">
+      <img src="https://images.squarespace-cdn.com/content/v1/5e78019645630059aea17c07/99b9af92-6c36-41c2-9960-64f5ca4642c0/low+fidelity.png" alt="Low fidelity mocks">
     </div>
+
+    <p>During the low-fidelity mock phase, we were able to iron out some design decisions. We removed some sections, added new ones, and simplified others. An example of this would be the <strong>Discover Our Ships</strong> section. This area took up too much room and was better left to being on its own separate page. We instead added a highlight about the Viking ships in a different section.</p>
+
+    <hr>
+
+    <h4>5. High-Fidelity Mocks</h4>
+    <p>After tinkering with the UX of the landing page, it finally came time to make the high-fidelity version. I used our branding and implemented our design system to create these mocks.</p>
+
+    <a href="https://www.figma.com/proto/UpGwe9y38oahwPFeYKNM0L/Special-Offers?node-id=1-1922&page-id=0%3A1&scaling=min-zoom&type=design&viewport=-248%2C644%2C0.13" class="prototype-link" target="_blank" rel="noopener">View Figma Prototype</a>
+
+    <h4>Desktop</h4>
+    <div class="case-image-block">
+      <img src="https://images.squarespace-cdn.com/content/v1/5e78019645630059aea17c07/d54542ad-44d4-4755-9f0c-f993a82e6c9a/high+fidelity+2.png" alt="High fidelity desktop 1">
+    </div>
+
+    <h4>Tablet</h4>
+    <div class="image-row">
+      <div class="image-col">
+        <div class="image-block">
+          <img src="https://images.squarespace-cdn.com/content/v1/5e78019645630059aea17c07/bc53bc80-f60c-4e92-84d6-d8f3033a823c/high+fidelity+tablet.png" alt="Tablet mockup">
+        </div>
+      </div>
+      <div class="image-col">
+        <div class="image-block">
+          <img src="https://images.squarespace-cdn.com/content/v1/5e78019645630059aea17c07/e73cdd81-919b-4fb2-b19d-39cb1a29d114/high+fidelity+3.png" alt="Desktop mockup 2">
+        </div>
+      </div>
+    </div>
+
+    <hr>
+
+    <h4>7. Testing</h4>
+    <p>After spending all this time and effort on this experience, we have reached the mark of getting users' eyes on this. I set up a test on Usertesting.com to gather any information that can help us iterate this design before launching. If we can take care of any obstacles now, we won't have to backtrack on development time.</p>
+    <p>Once I gathered all the research from the user test I changed the design where need be. For instance, the Itinerary Cards had a carousel arrow to the right to view more cruises, but users were missing this UI. So I chose to add a "Show More" CTA button instead.</p>
+
+    <p><strong>6. Yay we're done! Launch!</strong></p>
+    <p>…never that simple huh?</p>
+
+    <hr>
+
+    <h4>Mobile</h4>
+    <div class="image-row">
+      <div class="image-col">
+        <div class="image-block">
+          <img src="https://images.squarespace-cdn.com/content/v1/5e78019645630059aea17c07/c30424b9-83c0-4cf6-b5c1-5ba3d13ced10/high+fidelity+mobile+1.png" alt="Mobile mockup 1">
+        </div>
+      </div>
+      <div class="image-col">
+        <div class="image-block">
+          <img src="https://images.squarespace-cdn.com/content/v1/5e78019645630059aea17c07/3720a1ed-cd5b-4c51-9f60-1f5b0951351d/high+fidelity+mobile+2.png" alt="Mobile mockup 2">
+        </div>
+      </div>
+    </div>
+
+    <hr>
+
+    <h3>Conclusion</h3>
+    <p>With this new version of the Strategic Tactical Journey Page, users are now getting a full experience. Rather than seeing an outdated website with no context, users instead get educated on the Viking brand, see what the current deal is, and are given a quick view of all itineraries that are available.</p>
+
+    <p>Data Points:</p>
+    <ul>
+      <li>85% of users said they prefer this type of landing page with more content</li>
+      <li>85% of users said the Special Offer on this page was more clear than the original version</li>
+      <li>95% of users said they are interested in learning more about Viking by clicking on the CTA buttons</li>
+      <li>Out of 20 people, 15 said they found the extra information informative rather than distracting</li>
+      <li>95% of users enjoyed the new version more than the original version</li>
+    </ul>
+
   </div>
 
-</div>
+  <!-- CTA -->
+  <section class="bottom-cta">
+    <h2>Ready to take your design to the <strong>next level</strong>?</h2>
+    <a href="contact.html" class="btn-primary" style="background:#1a1a1a;color:#fff;border-color:#1a1a1a;">Let's Connect</a>
+  </section>
 
-<section class="cta-section">
-  <h2>Ready to take your design to the <strong>next level?</strong></h2>
-  <a href="contact.html" class="btn">Let's Connect</a>
-</section>
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-links">
+      <a href="tel:8184526527">818.452.6527</a>
+      <span class="divider">|</span>
+      <a href="mailto:designergev@gmail.com">designergev@gmail.com</a>
+      <span class="divider">|</span>
+      <a href="https://www.linkedin.com/in/designergev/" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </footer>
 
-<footer>
-  <div class="footer-links">
-    <a href="mailto:designergev@gmail.com">designergev@gmail.com</a>
-    <a href="tel:8184526527">818.452.6527</a>
-    <a href="https://www.linkedin.com/in/designergev/" target="_blank">LinkedIn</a>
-  </div>
-  <p class="footer-copy">© Gevorg Grigorian</p>
-</footer>
-<script src="main.js"></script>
+  <script>
+    const hamburger = document.getElementById('navHamburger');
+    const navLinks = document.getElementById('navLinks');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      navLinks.classList.toggle('open');
+    });
+  </script>
+
 </body>
 </html>
