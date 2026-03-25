@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Observe elements that should animate in
   const animateElements = document.querySelectorAll(
-    '.work-section, .case-image-block, .case-image-full, .image-row, .image-row--three, ' +
+    '.card-section, .my-work-heading, .case-image-block, .case-image-full, .image-row, .image-row--three, ' +
     '.existing-designs-row, .humanize-section, .stats-row, .about-section, ' +
     '.case-content h2, .case-content h3, .case-content h4, .bottom-cta'
   );

@@ -160,7 +160,7 @@ strong, b {
   top: 100%;
   left: -16px;
   background: #fff;
-  min-width: 260px;
+  min-width: 340px;
   box-shadow: 0 8px 30px rgba(0,0,0,0.1);
   border-radius: 4px;
   padding: 12px 0;
@@ -179,11 +179,11 @@ strong, b {
 .nav-dropdown a {
   display: block;
   padding: 12px 24px;
-  font-size: 1.15rem;
-  font-weight: 600;
+  font-size: 1.08rem;
+  font-weight: 500;
   color: #333;
-  text-transform: none;
-  letter-spacing: 0;
+  text-transform: capitalize;
+  letter-spacing: 0.04em;
   transition: background 0.15s, color 0.15s;
 }
 
@@ -235,7 +235,7 @@ strong, b {
    ============================================ */
 .hero {
   position: relative;
-  min-height: 66vh;
+  min-height: 80vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -261,7 +261,7 @@ strong, b {
   position: relative;
   z-index: 1;
   max-width: 580px;
-  padding: 0 24px;
+  padding: 80px 24px 0;
   margin-right: auto;
   margin-left: max(80px, calc(50% - 520px));
 }
@@ -274,10 +274,12 @@ strong, b {
 
 .hero-content h1 em {
   font-style: normal;
-  background: linear-gradient(135deg, #e8913a, #f5a623);
+  background: linear-gradient(135deg, #E07D19, #f0a030);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  padding: 0 4px 4px 0;
+  display: inline-block;
 }
 
 .hero-content p {
@@ -350,11 +352,40 @@ strong, b {
    side-by-side image + text, alternating
    ============================================ */
 .my-work-heading {
-  text-align: center;
+  text-align: left;
   padding: 0 24px 32px;
   font-size: 3.2rem;
+  font-weight: 400;
   color: #3aadd1;
   margin: 0;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* --- Scroll Arrow --- */
+.scroll-arrow {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  justify-content: flex-end;
+  margin: -60px 0 0;
+  padding-right: calc(50% - 500px);
+  animation: bounceArrow 2s ease-in-out infinite;
+}
+
+.scroll-arrow svg {
+  width: 80px;
+  height: auto;
+}
+
+@keyframes bounceArrow {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(16px);
+  }
 }
 
 /* --- Sections Wrap — page background behind cards --- */
@@ -372,10 +403,6 @@ strong, b {
   position: relative;
 }
 
-.card-section--light {
-  background: linear-gradient(135deg, #1a1a2e, #2d2d44);
-}
-
 .card-section--dark {
   background: #1a1a2e;
 }
@@ -385,7 +412,7 @@ strong, b {
 }
 
 .card-section--cta {
-  background: linear-gradient(135deg, #e8913a, #f5a623);
+  background: linear-gradient(135deg, #B36414, #C08026);
 }
 
 /* Reset work-section inside cards */
@@ -441,7 +468,7 @@ strong, b {
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.35);
+  background: rgba(0, 0, 0, 0.5);
 }
 
 .work-section-image {
@@ -461,23 +488,23 @@ strong, b {
   width: auto;
 }
 
-/* Full-bleed image variant (Unified Viking) — 50/50 split */
+/* Full-bleed image variant (Unified Viking) — image to halfway */
 .work-section--fullbleed .work-section-image {
   flex: 0 0 50%;
-  padding: 40px 0 40px 40px;
+  padding: 0;
   max-width: 50%;
   overflow: hidden;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: flex-start;
+  align-self: stretch;
 }
 
 .work-section--fullbleed .work-section-image img {
-  width: auto;
-  height: auto;
-  max-width: 100%;
-  max-height: 520px;
-  object-fit: contain;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: left center;
 }
 
 .work-section--fullbleed .work-section-text {
@@ -487,7 +514,7 @@ strong, b {
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  padding: 60px 64px;
+  padding: 60px 48px 60px 48px;
 }
 
 .work-section-text {
@@ -537,17 +564,9 @@ strong, b {
   color: rgba(255, 255, 255, 0.85);
 }
 
-/* Viking — white text on dark gradient */
+/* Viking — now dark like other sections */
 .work-section--viking {
   background: transparent;
-}
-
-.work-section--viking .work-section-text h3 {
-  color: #fff;
-}
-
-.work-section--viking .work-section-text h4 {
-  color: rgba(255, 255, 255, 0.85);
 }
 
 /* Dark section fallback bg colors — handled by card-section */
@@ -580,7 +599,7 @@ strong, b {
 }
 
 .humanize-section h2 em {
-  background: linear-gradient(135deg, #e8913a, #f5a623);
+  background: linear-gradient(135deg, #E07D19, #f0a030);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -597,6 +616,14 @@ strong, b {
   max-width: 100%;
   width: 1125px;
   margin: 40px auto;
+}
+
+.humanize-section .process-mobile {
+  display: none;
+}
+
+.humanize-section .process-desktop {
+  display: block;
 }
 
 .cta-section {
@@ -1070,7 +1097,7 @@ strong, b {
 }
 
 .bottom-cta h2 {
-  font-size: 2.6rem;
+  font-size: 3.6rem;
   margin-bottom: 32px;
 }
 
@@ -1089,13 +1116,13 @@ strong, b {
 
 .card-section--cta .bottom-cta .btn-blue {
   background: #fff;
-  color: #e8913a;
+  color: #B36414;
   border-color: #fff;
 }
 
 .card-section--cta .bottom-cta .btn-blue:hover {
   background: rgba(255, 255, 255, 0.9);
-  color: #d07e2a;
+  color: #945210;
 }
 
 
@@ -1154,16 +1181,38 @@ strong, b {
 
   /* Hero */
   .hero {
-    justify-content: center;
-    text-align: center;
+    justify-content: flex-start;
+    text-align: left;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.5);
+    pointer-events: none;
   }
 
   .hero-content {
-    padding: 0 24px;
+    padding: 80px 24px 0;
+    margin-left: 24px;
+    max-width: none;
+    z-index: 2;
+  }
+
+  .hero-content h1 br {
+    display: none;
   }
 
   .hero-buttons {
-    justify-content: center;
+    justify-content: flex-start;
+    flex-direction: column;
+  }
+
+  .hero-buttons .btn-primary {
+    width: 100%;
+    text-align: center;
   }
 
   .hero-content h1 {
@@ -1178,28 +1227,57 @@ strong, b {
     min-height: auto;
   }
 
+  /* Force image on top, text below — regardless of HTML order */
+  .work-section .work-section-image {
+    order: 1;
+  }
+
+  .work-section .work-section-bg {
+    order: 0;
+  }
+
+  .work-section .work-section-text {
+    order: 2;
+  }
+
   .work-section-image {
     padding: 40px 24px 20px;
     max-width: 100%;
   }
 
   .work-section--fullbleed .work-section-image {
-    padding: 0;
+    padding: 24px 24px 0;
     max-width: 100%;
+    flex: none;
+    overflow: hidden;
+    align-self: auto;
   }
 
   .work-section--fullbleed .work-section-image img {
-    min-height: 300px;
+    width: 100%;
+    height: auto;
+    min-height: auto;
+    object-position: center;
   }
 
   .work-section--fullbleed .work-section-text {
     max-width: 100%;
+    flex: none;
+    padding: 24px;
   }
 
   .work-section-text {
     padding: 20px 24px 40px;
     text-align: center;
     max-width: 100%;
+  }
+
+  /* Full-width buttons inside card sections */
+  .card-section .btn-view-project,
+  .card-section .btn-primary {
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
   }
 
   /* Case content */
@@ -1218,6 +1296,34 @@ strong, b {
 
   .existing-designs-row {
     flex-direction: column;
+  }
+
+  /* Humanize section mobile */
+  .humanize-section {
+    padding: 40px 24px;
+  }
+
+  .humanize-section h2 {
+    font-size: 1.8rem;
+  }
+
+  .bottom-cta h2 {
+    font-size: 1.8rem;
+  }
+
+  .humanize-section p {
+    font-size: 1.05rem;
+  }
+
+  .humanize-section .process-desktop {
+    display: none;
+  }
+
+  .humanize-section .process-mobile {
+    display: block;
+    width: 270px;
+    max-width: 80%;
+    margin: 32px auto;
   }
 
   /* About */

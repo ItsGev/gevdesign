@@ -1,0 +1,47 @@
+<svg width="320" height="680" viewBox="0 0 320 680" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Step 1: Empathize -->
+  <circle cx="140" cy="60" r="40" stroke="#3AADD1" stroke-width="1.5" stroke-dasharray="6 4" fill="none"/>
+  <text x="140" y="65" text-anchor="middle" fill="#1a1a1a" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" font-weight="700">EMPATHIZE</text>
+  
+  <!-- Arrow 1→2 (gap: starts 6px below circle, tip ends 6px above next) -->
+  <line x1="140" y1="106" x2="140" y2="138" stroke="#3AADD1" stroke-width="1.5"/>
+  <polygon points="134,134 140,146 146,134" fill="#3AADD1"/>
+
+  <!-- Step 2: Define -->
+  <circle cx="140" cy="190" r="40" stroke="#3AADD1" stroke-width="1.5" stroke-dasharray="6 4" fill="none"/>
+  <text x="140" y="195" text-anchor="middle" fill="#1a1a1a" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" font-weight="700">DEFINE</text>
+
+  <!-- Arrow 2→3 -->
+  <line x1="140" y1="236" x2="140" y2="268" stroke="#3AADD1" stroke-width="1.5"/>
+  <polygon points="134,264 140,276 146,264" fill="#3AADD1"/>
+
+  <!-- Step 3: Ideate -->
+  <circle cx="140" cy="320" r="40" stroke="#3AADD1" stroke-width="1.5" stroke-dasharray="6 4" fill="none"/>
+  <text x="140" y="325" text-anchor="middle" fill="#1a1a1a" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" font-weight="700">IDEATE</text>
+
+  <!-- Arrow 3→4 -->
+  <line x1="140" y1="366" x2="140" y2="398" stroke="#3AADD1" stroke-width="1.5"/>
+  <polygon points="134,394 140,406 146,394" fill="#3AADD1"/>
+
+  <!-- Step 4: Prototype -->
+  <circle cx="140" cy="450" r="40" stroke="#3AADD1" stroke-width="1.5" stroke-dasharray="6 4" fill="none"/>
+  <text x="140" y="455" text-anchor="middle" fill="#1a1a1a" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" font-weight="700">PROTOTYPE</text>
+
+  <!-- Arrow 4→5 -->
+  <line x1="140" y1="496" x2="140" y2="528" stroke="#3AADD1" stroke-width="1.5"/>
+  <polygon points="134,524 140,536 146,524" fill="#3AADD1"/>
+
+  <!-- Step 5: Test -->
+  <circle cx="140" cy="580" r="40" stroke="#3AADD1" stroke-width="1.5" stroke-dasharray="6 4" fill="none"/>
+  <text x="140" y="585" text-anchor="middle" fill="#1a1a1a" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" font-weight="700">TEST</text>
+
+  <!-- Loop back arrow with curved corners (gap from circles) -->
+  <path d="M180 580 L235 580 A20 20 0 0 0 255 560 L255 80 A20 20 0 0 0 235 60 L188 60" 
+        stroke="#3AADD1" stroke-width="1.5" fill="none"/>
+  <!-- Arrow tip with gap from Empathize circle -->
+  <polygon points="192,54 184,60 192,66" fill="#3AADD1"/>
+
+  <!-- ITERATE: white rectangle on the loop line -->
+  <rect x="216" y="306" width="78" height="28" rx="4" fill="#fff" stroke="#3AADD1" stroke-width="1"/>
+  <text x="255" y="325" text-anchor="middle" fill="#1a1a1a" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" font-weight="700" letter-spacing="0.08em">ITERATE</text>
+</svg>
