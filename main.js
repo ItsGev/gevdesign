@@ -1,5 +1,6 @@
 /* ============================================
    GEV DESIGN — Main JavaScript
+   Apple-style staggered scroll animations
    ============================================ */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -14,7 +15,6 @@ document.addEventListener('DOMContentLoaded', () => {
       navLinks.classList.toggle('open');
     });
 
-    // Close mobile nav when a link is clicked
     navLinks.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         hamburger.classList.remove('active');
@@ -23,31 +23,83 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  /* --- Scroll-triggered Fade-in Animations --- */
+
+  /* --- Staggered Scroll Animations --- */
+  
+  // 1. "My Work" heading — simple fade up
+  document.querySelectorAll('.my-work-heading, .scroll-arrow').forEach(el => {
+    el.classList.add('anim');
+  });
+
+  // 2. Card sections — the card itself animates, then children stagger
+  document.querySelectorAll('.card-section').forEach(card => {
+    // Card container animates up
+    card.classList.add('anim');
+
+    // Find children to stagger inside work sections
+    const image = card.querySelector('.work-section-image');
+    const text = card.querySelector('.work-section-text');
+    
+    if (image) {
+      image.classList.add('anim', 'anim-delay-1');
+    }
+    if (text) {
+      text.classList.add('anim', 'anim-delay-2');
+    }
+
+    // Humanize section children
+    const humanizeH2 = card.querySelector('.humanize-section h2');
+    const humanizePs = card.querySelectorAll('.humanize-section p');
+    const humanizeImg = card.querySelector('.humanize-section img');
+    
+    if (humanizeH2) {
+      humanizeH2.classList.add('anim', 'anim-delay-1');
+    }
+    if (humanizeImg) {
+      humanizeImg.classList.add('anim', 'anim-delay-2');
+    }
+    humanizePs.forEach((p, i) => {
+      p.classList.add('anim', i === 0 ? 'anim-delay-1' : 'anim-delay-3');
+    });
+
+    // Bottom CTA children
+    const ctaH2 = card.querySelector('.bottom-cta h2');
+    const ctaBtn = card.querySelector('.bottom-cta .btn-primary');
+    
+    if (ctaH2) {
+      ctaH2.classList.add('anim', 'anim-delay-1');
+    }
+    if (ctaBtn) {
+      ctaBtn.classList.add('anim', 'anim-delay-2');
+    }
+  });
+
+  // 3. Set up Intersection Observer
   const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -40px 0px'
+    threshold: 0.08,
+    rootMargin: '0px 0px -60px 0px'
   };
 
-  const fadeObserver = new IntersectionObserver((entries) => {
+  const animObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('is-visible');
-        fadeObserver.unobserve(entry.target);
+
+        // When a card becomes visible, also trigger its children
+        if (entry.target.classList.contains('card-section')) {
+          entry.target.querySelectorAll('.anim').forEach(child => {
+            child.classList.add('is-visible');
+          });
+        }
+
+        animObserver.unobserve(entry.target);
       }
     });
   }, observerOptions);
 
-  // Observe elements that should animate in
-  const animateElements = document.querySelectorAll(
-    '.card-section, .my-work-heading, .case-image-block, .case-image-full, .image-row, .image-row--three, ' +
-    '.existing-designs-row, .humanize-section, .stats-row, .about-section, ' +
-    '.case-content h2, .case-content h3, .case-content h4, .bottom-cta'
-  );
-
-  animateElements.forEach(el => {
-    el.classList.add('fade-in');
-    fadeObserver.observe(el);
+  // Observe all top-level animated elements
+  document.querySelectorAll('.my-work-heading.anim, .scroll-arrow.anim, .card-section.anim').forEach(el => {
+    animObserver.observe(el);
   });
 
 
@@ -78,10 +130,8 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 
-  /* --- Image Lazy Loading Enhancement --- */
-  // Add loading="lazy" to images that don't have it
+  /* --- Image Lazy Loading --- */
   document.querySelectorAll('img:not([loading])').forEach(img => {
-    // Don't lazy-load hero images or nav logo
     if (!img.closest('.hero-bg') && !img.closest('.case-hero') && !img.closest('.nav-logo')) {
       img.setAttribute('loading', 'lazy');
     }
