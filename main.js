@@ -85,8 +85,8 @@ document.addEventListener('DOMContentLoaded', () => {
       if (entry.isIntersecting) {
         entry.target.classList.add('is-visible');
 
-        // When a card becomes visible, also trigger its children
-        if (entry.target.classList.contains('card-section')) {
+        // When a card or CTA becomes visible, also trigger its children
+        if (entry.target.classList.contains('card-section') || entry.target.classList.contains('bottom-cta--fullbleed')) {
           entry.target.querySelectorAll('.anim').forEach(child => {
             child.classList.add('is-visible');
           });
@@ -101,6 +101,17 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.my-work-heading.anim, .scroll-arrow.anim, .card-section.anim').forEach(el => {
     animObserver.observe(el);
   });
+
+  // Also animate the full-bleed CTA
+  const fullbleedCta = document.querySelector('.bottom-cta--fullbleed');
+  if (fullbleedCta) {
+    fullbleedCta.classList.add('anim');
+    const ctaH2 = fullbleedCta.querySelector('h2');
+    const ctaBtn = fullbleedCta.querySelector('.btn-primary');
+    if (ctaH2) ctaH2.classList.add('anim', 'anim-delay-1');
+    if (ctaBtn) ctaBtn.classList.add('anim', 'anim-delay-2');
+    animObserver.observe(fullbleedCta);
+  }
 
 
   /* --- Navbar Background on Scroll --- */

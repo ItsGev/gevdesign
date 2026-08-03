@@ -35,25 +35,36 @@
   </nav>
 
   <!-- About Section -->
-  <section class="about-section">
-    <div class="about-image">
-      <img src="https://images.squarespace-cdn.com/content/v1/5e78019645630059aea17c07/d8e32f5e-2ee8-4597-884b-61103e35e79b/gev.jpg" alt="Gev Grigorian">
-    </div>
-    <div class="about-text">
-      <h1>Hey, I'm <em>Gev</em>! Nice to meet you :)</h1>
-      <p>Seasoned Senior UX Designer who has led and collaborated with teams of designers, product managers, and developers.</p>
-      <p>My passion for design ignited in the mid-2000s when my brother gifted me Photoshop. 13-year-old me was blown away by the capabilities of the software. I've been hooked to creative outlets ever since. Over the years, I've honed my skills across various design disciplines including Photography, Motion Graphics, UX/UI, Branding, and Web; enriching my expertise and pushing creative boundaries.</p>
-      <p>I even know how to trim and shape my own beard, that's design oriented too, right?</p>
-      <p>If you would like to connect or get my most up to date resume you can email me at <a href="mailto:designergev@gmail.com" style="border-bottom:1px solid #ccc;">designergev@gmail.com</a>.</p>
-      <p>Hope to connect with you soon!</p>
+  <section class="about-hero">
+    <canvas class="particle-canvas" id="particleCanvas"></canvas>
+    <div class="about-hero-inner">
+      <div class="about-image-wrap">
+        <div class="about-image-deco about-image-deco--1"></div>
+        <div class="about-image-deco about-image-deco--2"></div>
+        <div class="about-image">
+          <img src="https://images.squarespace-cdn.com/content/v1/5e78019645630059aea17c07/d8e32f5e-2ee8-4597-884b-61103e35e79b/gev.jpg" alt="Gev Grigorian">
+        </div>
+        <div class="about-image-badge">
+          <span>UX</span>
+          <span>Designer</span>
+        </div>
+      </div>
+      <div class="about-text">
+        <p class="about-eyebrow">About Me</p>
+        <h1>Hey, I'm <em>Gev</em>!<br>Nice to meet you <span class="wave">:)</span></h1>
+        <p class="about-lead">I'm a UX Designer who has led and collaborated with teams of designers, product managers, and developers to bring ideas to life.</p>
+        <p>My passion for design ignited in the mid-2000s when my brother gifted me Photoshop. 13-year-old me was blown away by the capabilities of the software. I've been hooked to creative outlets ever since. Over the years, I've honed my skills across various design disciplines including Photography, Motion Graphics, UX/UI, Branding, and Web; enriching my expertise and pushing creative boundaries.</p>
+        <p>I even know how to trim and shape my own beard, that's design oriented too, right?</p>
+        <p>If you'd like to connect or get my most up-to-date resume, email me at <a href="mailto:designergev@gmail.com" class="about-email">designergev@gmail.com</a>.</p>
+        <p class="about-signoff">Hope to connect with you soon!</p>
+      </div>
     </div>
   </section>
+
 
   <!-- Footer -->
   <footer class="site-footer">
     <div class="footer-links">
-      <a href="tel:8184526527">818.452.6527</a>
-      <span class="divider">|</span>
       <a href="mailto:designergev@gmail.com">designergev@gmail.com</a>
       <span class="divider">|</span>
       <a href="https://www.linkedin.com/in/designergev/" target="_blank" rel="noopener">LinkedIn</a>
@@ -61,6 +72,73 @@
   </footer>
 
   <script src="main.js"></script>
+  <script>
+    // Cursor particle effect
+    (function() {
+      const canvas = document.getElementById('particleCanvas');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      const section = canvas.closest('.about-hero');
+      let particles = [];
+      const colors = ['#3aadd1', '#E07D19', '#5bc0de', '#f0a030'];
+
+      function resize() {
+        canvas.width = section.offsetWidth;
+        canvas.height = section.offsetHeight;
+      }
+      resize();
+      window.addEventListener('resize', resize);
+
+      class Particle {
+        constructor(x, y) {
+          this.x = x;
+          this.y = y;
+          this.size = Math.random() * 4.2 + 1.4;
+          this.speedX = (Math.random() - 0.5) * 1.3;
+          this.speedY = (Math.random() - 0.5) * 1.3 - 0.35;
+          this.color = colors[Math.floor(Math.random() * colors.length)];
+          this.life = 1;
+          this.decay = Math.random() * 0.012 + 0.008;
+        }
+        update() {
+          this.x += this.speedX;
+          this.y += this.speedY;
+          this.life -= this.decay;
+          this.size *= 0.99;
+        }
+        draw() {
+          ctx.globalAlpha = this.life;
+          ctx.fillStyle = this.color;
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+          ctx.fill();
+        }
+      }
+
+      let mouseX = 0, mouseY = 0, lastSpawn = 0;
+      section.addEventListener('mousemove', (e) => {
+        const rect = section.getBoundingClientRect();
+        mouseX = e.clientX - rect.left;
+        mouseY = e.clientY - rect.top;
+        const now = Date.now();
+        if (now - lastSpawn > 20) {
+          for (let i = 0; i < 2; i++) {
+            particles.push(new Particle(mouseX, mouseY));
+          }
+          lastSpawn = now;
+        }
+      });
+
+      function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        particles = particles.filter(p => p.life > 0);
+        particles.forEach(p => { p.update(); p.draw(); });
+        ctx.globalAlpha = 1;
+        requestAnimationFrame(animate);
+      }
+      animate();
+    })();
+  </script>
 
 </body>
 </html>
