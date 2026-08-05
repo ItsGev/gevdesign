@@ -12,7 +12,7 @@
   <nav class="site-nav">
     <div class="nav-inner">
       <a href="index.html" class="nav-logo">
-        <img src="https://images.squarespace-cdn.com/content/v1/5e78019645630059aea17c07/1584992266800-M5TKYRN9V7KKILRTRA14/Gevorg_grigorian_logo2.png?format=300w" alt="Gev Design">
+        <img src="gevorg-grigorian-logo2.webp" alt="Gev Design">
       </a>
       <ul class="nav-links" id="navLinks">
         <li><a href="index.html">Home</a></li>
@@ -37,10 +37,11 @@
   </nav>
 
   <!-- Hero — stays full bleed -->
-  <section class="hero">
+  <section class="hero hero--interactive">
     <div class="hero-bg">
-      <img src="https://images.squarespace-cdn.com/content/v1/5e78019645630059aea17c07/815615e4-76c1-4208-bceb-b928c9cfad03/Gevdarkbg.jpg" alt="">
+      <img src="gevdarkbg.webp" alt="">
     </div>
+    <canvas class="hero-particle-canvas" id="heroParticleCanvas"></canvas>
     <div class="hero-content">
       <h1 class="hero-anim-1">Hey there! <br>I'm <em>Gev</em>.</h1>
       <p class="hero-anim-2">I am a Lead UX/UI Designer passionate about solving complex problems, optimizing user journeys for business growth, and offering an exceptional experience. Check out my work down below!</p>
@@ -100,7 +101,7 @@
     <div class="card-section card-section--dark">
       <section class="work-section work-section--strategic work-section--img-right work-section--dark">
         <div class="work-section-bg">
-          <img src="https://images.squarespace-cdn.com/content/v1/5e78019645630059aea17c07/7702b1b8-ade0-4273-b3e5-5d2c1b50a295/image-asset.jpg" alt="">
+          <img src="image-asset.webp" alt="">
         </div>
         <div class="work-section-text">
           <h3>Strategic Tactical Journey</h3>
@@ -108,7 +109,7 @@
           <a href="strategic-tactical.html" class="btn-view-project">View Project</a>
         </div>
         <div class="work-section-image">
-          <img src="https://images.squarespace-cdn.com/content/v1/5e78019645630059aea17c07/66813fa7-7c34-4696-9a1c-c01e0aa8211b/main+hero.png" alt="Strategic Tactical Journey">
+          <img src="main-hero.webp" alt="Strategic Tactical Journey">
         </div>
       </section>
     </div>
@@ -117,10 +118,10 @@
     <div class="card-section card-section--dark">
       <section class="work-section work-section--widget work-section--img-left work-section--dark">
         <div class="work-section-bg">
-          <img src="https://images.squarespace-cdn.com/content/v1/5e78019645630059aea17c07/1612477899388-6YCMAXKL3FMIQ8N4S04C/image-asset.jpeg" alt="">
+          <img src="widget-bg.webp" alt="">
         </div>
         <div class="work-section-image">
-          <img src="https://images.squarespace-cdn.com/content/v1/5e78019645630059aea17c07/4935f35a-8b4f-4557-a55a-b2afa68a9206/widget+gallery.png" alt="Nativo Widget Gallery">
+          <img src="widget-gallery.webp" alt="Nativo Widget Gallery">
         </div>
         <div class="work-section-text">
           <h3>Nativo Widget Gallery</h3>
@@ -134,7 +135,7 @@
     <div class="card-section card-section--dark">
       <section class="work-section work-section--hilton work-section--img-right work-section--dark">
         <div class="work-section-bg">
-          <img src="https://images.squarespace-cdn.com/content/v1/5e78019645630059aea17c07/1612477961552-T1BN0AWQ8N2M8S0TPRUM/image-asset.jpeg" alt="">
+          <img src="hilton-bg.webp" alt="">
         </div>
         <div class="work-section-text">
           <h3>Hilton Microsite</h3>
@@ -142,7 +143,7 @@
           <a href="hilton-microsite.html" class="btn-view-project">View Project</a>
         </div>
         <div class="work-section-image">
-          <img src="https://images.squarespace-cdn.com/content/v1/5e78019645630059aea17c07/62214717-a14b-45ed-8877-a6a969d277c2/hilton.png" alt="Hilton Microsite">
+          <img src="hilton.webp" alt="Hilton Microsite">
         </div>
       </section>
     </div>
@@ -152,7 +153,7 @@
       <section class="humanize-section">
         <h2>I <em>humanize</em> technology</h2>
         <p>I curate my work with the <strong>end user's experience</strong> in mind. I make my decisions based on research, collaboration, and user testing.</p>
-        <img src="https://images.squarespace-cdn.com/content/v1/5e78019645630059aea17c07/1593643545278-562GV7ZJ961VHSF7PJQ0/process2.png" alt="Design process" class="process-desktop">
+        <img src="process2.webp" alt="Design process" class="process-desktop">
         <img src="process-mobile.svg" alt="Design process" class="process-mobile">
         <p>These <strong>core principles</strong> have aided me in <strong>launching campaigns</strong> in <strong>agile</strong> work environments with brands such as Viking, Hilton, Mazda, Samsung, Adidas, Sony, Wells Fargo, Netflix, HPE, Sprint, Target, IBM, Disney, Starbucks and many more.</p>
       </section>
@@ -162,9 +163,6 @@
 
   <!-- CTA — full bleed, not in card -->
   <section class="bottom-cta bottom-cta--fullbleed">
-    <div class="work-section-bg">
-      <img src="https://images.squarespace-cdn.com/content/v1/5e78019645630059aea17c07/1593641278378-U0NKO1T6FIKHEDOFZI23/Screen+Shot+2020-07-01+at+3.07.49+PM.png" alt="">
-    </div>
     <h2>Ready to take your design to the <strong>next level</strong>?</h2>
     <a href="contact.html" class="btn-primary btn-blue btn-large">Let's Connect</a>
   </section>
@@ -183,6 +181,47 @@
   </footer>
 
   <script src="main.js"></script>
+  <script>
+    (function() {
+      const canvas = document.getElementById('heroParticleCanvas');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      const section = canvas.closest('.hero');
+      let particles = [];
+      const colors = ['#3aadd1', '#E07D19', '#5bc0de', '#f0a030'];
+      function resize() { canvas.width = section.offsetWidth; canvas.height = section.offsetHeight; }
+      resize();
+      window.addEventListener('resize', resize);
+      class Particle {
+        constructor(x, y) {
+          this.x = x; this.y = y;
+          this.size = Math.random() * 4.2 + 1.4;
+          this.speedX = (Math.random() - 0.5) * 1.3;
+          this.speedY = (Math.random() - 0.5) * 1.3 - 0.35;
+          this.color = colors[Math.floor(Math.random() * colors.length)];
+          this.life = 1;
+          this.decay = Math.random() * 0.012 + 0.008;
+        }
+        update() { this.x += this.speedX; this.y += this.speedY; this.life -= this.decay; this.size *= 0.99; }
+        draw() { ctx.globalAlpha = this.life; ctx.fillStyle = this.color; ctx.beginPath(); ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2); ctx.fill(); }
+      }
+      let lastSpawn = 0;
+      section.addEventListener('mousemove', (e) => {
+        const rect = section.getBoundingClientRect();
+        const mx = e.clientX - rect.left, my = e.clientY - rect.top;
+        const now = Date.now();
+        if (now - lastSpawn > 20) { for (let i = 0; i < 2; i++) particles.push(new Particle(mx, my)); lastSpawn = now; }
+      });
+      function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        particles = particles.filter(p => p.life > 0);
+        particles.forEach(p => { p.update(); p.draw(); });
+        ctx.globalAlpha = 1;
+        requestAnimationFrame(animate);
+      }
+      animate();
+    })();
+  </script>
 
 </body>
 </html>

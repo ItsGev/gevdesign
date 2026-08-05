@@ -247,6 +247,63 @@ strong, b {
   margin-top: 0;
 }
 
+/* Interactive hero — pencil cursor scoped to hero only */
+.hero--interactive {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cg transform='translate(2 2)'%3E%3Cpath d='M20.5 1.5l6 6-16 16-6 1 1-6z' fill='%23f0a030' stroke='%231a1a1a' stroke-width='1.5' stroke-linejoin='round'/%3E%3Cpath d='M18 4l6 6' stroke='%231a1a1a' stroke-width='1.5'/%3E%3Cpath d='M4.5 24.5l3-1-2-2z' fill='%231a1a1a'/%3E%3C/g%3E%3C/svg%3E") 2 30, auto;
+}
+
+.hero--interactive a,
+.hero--interactive button {
+  cursor: pointer;
+}
+
+.hero-particle-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* UX Designer badge — top right, with padding so it clears the nav */
+.hero-badge {
+  position: absolute;
+  z-index: 3;
+  top: 120px;
+  right: 48px;
+  background: #fff;
+  padding: 16px 28px;
+  border-radius: 6px;
+  box-shadow: 0 16px 44px rgba(0, 0, 0, 0.28);
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+  animation: heroBadgeFloat 5s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.hero-badge span:first-child {
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: #3aadd1;
+}
+
+.hero-badge span:last-child {
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #666;
+}
+
+@keyframes heroBadgeFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Content above particle canvas handled in .hero-content rule below */
+
 .hero-bg {
   position: absolute;
   inset: 0;
@@ -261,7 +318,7 @@ strong, b {
 
 .hero-content {
   position: relative;
-  z-index: 1;
+  z-index: 4;
   max-width: 580px;
   padding: 80px 24px 0;
   margin-right: auto;
@@ -652,13 +709,21 @@ strong, b {
   max-height: 600px;
   overflow: hidden;
   margin-top: 80px;
+  background: #7ea9cf;
 }
 
 .case-hero img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
 }
+
+/* Per-page hero background colors (match each hero image edge) */
+.case-hero--viking { background: #7ea9cf; }
+.case-hero--strategic { background: #C2E6F7; }
+.case-hero--widget { background: #5BB6E9; }
+.case-hero--hilton { background: #F9F4DA; }
 
 
 /* ============================================
@@ -781,6 +846,24 @@ strong, b {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+/* Full-bleed image — breaks out of case-content max-width */
+.case-image-fullbleed {
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  width: 100vw;
+  margin-top: 48px;
+  margin-bottom: 48px;
+}
+
+.case-image-fullbleed img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 .case-image-block img {
@@ -1089,7 +1172,6 @@ strong, b {
   letter-spacing: 0.04em;
   text-transform: uppercase;
   transition: all 0.3s;
-  margin: 24px 0;
 }
 
 .prototype-link:hover {
@@ -1162,6 +1244,7 @@ strong, b {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: 68% 20%;
 }
 
 /* Decorative floating shapes behind image */
@@ -1515,6 +1598,20 @@ strong, b {
   margin-top: 48px;
 }
 
+/* Full-bleed CTA — solid dark fill (replaces old banner image) */
+.bottom-cta--fullbleed {
+  background: #f0f4f7;
+  margin-top: 0;
+}
+
+.bottom-cta--fullbleed h2 {
+  color: #1a1a1a;
+}
+
+.bottom-cta--fullbleed h2 strong {
+  color: #3aadd1;
+}
+
 .bottom-cta h2 {
   font-size: 3.6rem;
   margin-bottom: 32px;
@@ -1562,6 +1659,9 @@ strong, b {
    RESPONSIVE
    ============================================ */
 @media (max-width: 968px) {
+  /* Hide hero badge on mobile — would crowd the text */
+  .hero-badge { display: none; }
+
   /* Sections wrap */
   .sections-wrap {
     padding: 40px 16px 16px;
@@ -1591,7 +1691,9 @@ strong, b {
     align-items: center;
     justify-content: flex-start;
     padding-top: 48px;
-    gap: 24px;
+    gap: 0;
+    z-index: 9999;
+    overflow-y: auto;
   }
 
   .nav-links.open {
@@ -1600,6 +1702,28 @@ strong, b {
 
   .nav-hamburger {
     display: block;
+    z-index: 10000;
+  }
+
+  .nav-links > li {
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid #f0f0f0;
+  }
+
+  .nav-links > li > a,
+  .nav-dropdown-toggle {
+    display: block;
+    padding: 20px 0;
+    font-size: 1.1rem;
+    width: 100%;
+  }
+
+  .dropdown-parent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
   }
 
   .nav-dropdown {
@@ -1608,13 +1732,18 @@ strong, b {
     opacity: 1;
     visibility: visible;
     transform: none;
-    padding: 0;
+    padding: 0 0 12px;
     min-width: auto;
     text-align: center;
+    background: #fafafa;
+    border-radius: 0;
+    width: 100%;
   }
 
   .nav-dropdown a {
-    padding: 8px 0;
+    padding: 14px 0;
+    font-size: 0.95rem;
+    color: #555;
   }
 
   /* Hero */
