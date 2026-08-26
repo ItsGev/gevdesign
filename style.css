@@ -1693,7 +1693,7 @@ strong, b {
     padding-top: 20px;
     gap: 0;
     z-index: 9999;
-    overflow-y: visible;
+    overflow-y: hidden;
   }
 
   .nav-links.open {
