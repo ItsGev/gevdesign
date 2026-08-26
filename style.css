@@ -1679,6 +1679,11 @@ strong, b {
   }
 
   /* Nav */
+  .site-nav {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+
   .nav-links {
     display: none;
     position: fixed;
