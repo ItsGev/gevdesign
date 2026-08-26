@@ -13,13 +13,43 @@ document.addEventListener('DOMContentLoaded', () => {
     hamburger.addEventListener('click', () => {
       hamburger.classList.toggle('active');
       navLinks.classList.toggle('open');
+      
+      // Close any open dropdowns when toggling menu
+      document.querySelectorAll('.dropdown-parent').forEach(dropdown => {
+        dropdown.classList.remove('dropdown-open');
+      });
     });
 
+    // Handle all regular links (closes menu)
     navLinks.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         hamburger.classList.remove('active');
         navLinks.classList.remove('open');
+        document.querySelectorAll('.dropdown-parent').forEach(dropdown => {
+          dropdown.classList.remove('dropdown-open');
+        });
       });
+    });
+
+    // Handle dropdown toggle button on mobile
+    const dropdownToggle = navLinks.querySelector('.nav-dropdown-toggle');
+    if (dropdownToggle) {
+      dropdownToggle.addEventListener('click', (e) => {
+        e.preventDefault();
+        const dropdownParent = dropdownToggle.closest('.dropdown-parent');
+        dropdownParent.classList.toggle('dropdown-open');
+      });
+    }
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.site-nav')) {
+        hamburger.classList.remove('active');
+        navLinks.classList.remove('open');
+        document.querySelectorAll('.dropdown-parent').forEach(dropdown => {
+          dropdown.classList.remove('dropdown-open');
+        });
+      }
     });
   }
 

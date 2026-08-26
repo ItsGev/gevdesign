@@ -1729,15 +1729,25 @@ strong, b {
   .nav-dropdown {
     position: static;
     box-shadow: none;
-    opacity: 1;
-    visibility: visible;
+    opacity: 0;
+    visibility: hidden;
     transform: none;
-    padding: 0 0 12px;
+    padding: 0;
     min-width: auto;
     text-align: center;
     background: #fafafa;
     border-radius: 0;
     width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 0.2s, max-height 0.2s, visibility 0.2s;
+  }
+
+  .dropdown-parent.dropdown-open .nav-dropdown {
+    opacity: 1;
+    visibility: visible;
+    max-height: 500px;
+    padding: 0 0 12px;
   }
 
   .nav-dropdown a {
